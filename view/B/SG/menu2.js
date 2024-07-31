@@ -41,8 +41,8 @@ document.write('\
                     <li class="storeLocationMenu">\
                         <a href="/B/' + countryPrefix + '/storeLocation.html"><i class="icon icon-map-marker"></i>Store Location</a>\
                     </li>\
-                    <li class="storeLocationMenu">\
-                        <a href="/B/' + countryPrefix + '/services.html"><i class="icon icon-map-marker"></i>Services</a>\
+                    <li class="service dropdown">\
+                        <a href=""><i class="icon icon-map-marker dropdown-toggle"></i>Services</a>\
                     </li>\
                     <li>\
                         <a href="/B/' + countryPrefix + '/memberLogin.html"><i class="icon icon-unlock-alt"></i>Login/Register</a>\
@@ -67,7 +67,7 @@ document.write('\
                     <li class="dropdown">\
                         <a class="dropdown-toggle" href="/B/' + countryPrefix + '/services.html">Services <i class="icon icon-angle-down"></i>\</a>\
                         <ul class="dropdown-menu">\
-                            <li><a id="tableDeskLink"><i class="icon icon-map-marker"></i> Delivery</a></li>\
+                            <li><a id=""><i class="icon icon-map-marker"></i> Delivery</a></li>\
                             <li><a href="/B/' + countryPrefix + '/furnitureCategory.html?cat=Bathroom"><i class="icon icon-map-marker"></i> Assembly</a></li>\
                             <li><a href="/B/' + countryPrefix + '/furnitureCategory.html?cat=Lightings"><i class="icon icon-map-marker"></i> Planning Types & Tools</a></li>\
                         </ul>\
