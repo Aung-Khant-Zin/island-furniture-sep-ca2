@@ -80,13 +80,15 @@
                                 }
                             }
                         }
-                                         
-                            htmlTxt += '<h5>Order #' + (1) + '</h5>';
+                        orderIdList.map((orderId, index) => {
+
+                                        
+                            htmlTxt += '<h5>Order #' + (index + 1) + '</h5>';
                             var counter = 0;
                             //get bought items by order ID
                             for (j = 0; j < boughtItem.length; j++) {
                             
-                                if(boughtItem[j].id == orderIdList[0]) {
+                                if(boughtItem[j].id == orderId) {
                                     var item = boughtItem[j];
                                     //display top level info
                                     if(counter == 0) {
@@ -129,7 +131,7 @@
                                                             <tbody>';
                             for (y = 0; y < boughtItem.length; y++) {
                             
-                                if (boughtItem[y].id == orderIdList[0]) {
+                                if (boughtItem[y].id == orderId) {
                                     var product = boughtItem[y];
                                     htmlTxt += '\
                                         <tr class="cart_table_item">\
@@ -172,9 +174,10 @@
                                     </div>\
                                 </div>';
                             finalPrice = 0;
-
+                        }) 
                         htmlTxt += '<h4 style="font-weight: bold; padding-left: 20px">Total Amount Spent: $'+ overallPrice + '</h4>';
                         document.getElementById("salesHistoryTab").innerHTML = htmlTxt;
+                        overallPrice = 0;
                     }
                 }).catch(function(error) {
                     console.log(error);
