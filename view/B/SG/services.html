@@ -1,0 +1,95 @@
+<script src="../checkCountry.js" ></script>
+<html>
+    <script src="../../header.js"></script>
+    <body>
+        <div class="body">
+            <script>
+                document.addEventListener('DOMContentLoaded', function(){
+                    var htmlTxt = '';
+                    var services = [{name: 'Assembly Service', description: 'abc'},{name: 'Delivery Service', description: 'abc'},{name: 'Planning Types & Tools Service', description: 'abc'}];
+                    for(i in services) {
+                        var service = services[i];
+                        htmlTxt += '\
+                            <div class="panel panel-default toggle" style="margin-bottom:10;">\
+                                <div class="panel-heading">\
+                                    <h4 class="panel-title">\
+                                        <a data-toggle="collapse" data-parent="#collapsable" href="#collapse' + i + '" onclick="changeIcon(this)">\
+                                            <i class="icon icon-plus plusMinusIcon" style="font-size: 0.7em;"></i>\
+                                                '+service.name+'\
+                                            <i class="icon icon-caret-right" style="float:right;padding-top:5px;"></i>\
+                                        </a>\
+                                    </h4>\
+                                </div>\
+                                <div id="collapse' + i + '" class="panel-collapse collapse">\
+                                    <div class="col-md-6" style="padding-top: 2%; padding-bottom: 2%; padding-left: 2%;">';
+                        
+                        htmlTxt += '\
+                                    </div>\
+                                    <div class="col-md-6" style="padding-top: 2%; padding-bottom: 2%;">\
+                                        <p>\
+                                            Name: ' + service.name + '<br/>\
+                                            Description: ' + service.description + '<br/>\
+                                        </p>\
+                                    </div>\
+                                </div>\
+                            </div>';
+                    }
+                    document.getElementById('collapsable').innerHTML = htmlTxt;
+                }, false);
+
+                function changeIcon(e) {
+                    var currentIcon = e.querySelector('i');
+                    var opened = true;
+                    if(currentIcon.classList.contains('icon-plus')) {
+                        opened = false;
+                    }
+
+                    var otherIcons = document.getElementById("collapsable").querySelectorAll('.plusMinusIcon');
+                    for (i = 0; i < otherIcons.length; i++){
+                        var icon = otherIcons[i];
+                        if(icon.classList.contains('icon-minus')) {
+                            icon.classList.replace('icon-minus','icon-plus');
+                        }
+                    }
+
+                    
+                    if(!opened) {
+                        currentIcon.classList.replace('icon-plus', 'icon-minus');
+                    }
+                    else {
+                        currentIcon.classList.replace('icon-minus', 'icon-plus');
+                    }
+                }
+            </script>
+            <script src="menu2.js"></script>
+            <div role="main" class="main">
+                <section class="page-top">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h2>Services</h2>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel-group" id="collapsable"></div>
+                        </div>
+                    </div>
+                </div>
+                <script src="../footer.js"></script>
+
+                <!-- Theme Initializer -->
+                <script src="../../js/theme.plugins.js"></script>
+                <script src="../../js/theme.js"></script>
+
+                <!-- Current Page JS -->
+                <script src="../../vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+                <script src="../../vendor/rs-plugin/js/jquery.themepunch.revolution.js"></script>
+                <script src="../../vendor/circle-flip-slideshow/js/jquery.flipshow.js"></script>
+                <script src="../../js/views/view.home.js"></script>
+            </div>
+    </body>
+</html>

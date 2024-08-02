@@ -41,8 +41,8 @@ document.write('\
                     <li class="storeLocationMenu">\
                         <a href="/B/' + countryPrefix + '/storeLocation.html"><i class="icon icon-map-marker"></i>Store Location</a>\
                     </li>\
-                    <li class="service dropdown">\
-                        <a href=""><i class="icon icon-map-marker dropdown-toggle"></i>Services</a>\
+                    <li class="service">\
+                        <a href="/B/' + countryPrefix + '/services.html"><i class="icon icon-map-marker dropdown-toggle"></i>Services</a>\
                     </li>\
                     <li>\
                         <a href="/B/' + countryPrefix + '/memberLogin.html"><i class="icon icon-unlock-alt"></i>Login/Register</a>\
